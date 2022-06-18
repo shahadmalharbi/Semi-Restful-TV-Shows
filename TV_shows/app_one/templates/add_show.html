@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a Show</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="wrapper" style="width: 88%; margin: 0px auto; text-align: center;">
+        <h1 style="display: inline-block; margin: 0; ">Add a New Show</h1>
+        <form action="/submit_show" method="POST" class="col s12">
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Title" type="text" name="title">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Network" name="network" type="text">
+                </div>
+                <div class="input-field col s6">
+                    <input name="release_date" id="release_date" type="date">
+                    <label for="release_date"> Release Date </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input field col s12" style="text-align: left;">
+                    <label> <p>Description</p> </label>                    
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
